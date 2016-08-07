@@ -2,18 +2,46 @@
 <items version="2" >
 
     <item
-        jar="/Users/Jaecheol/Documents/Workspace/Android/CycleHelper/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/jars/classes.jar"
+        jar="/Users/Jaecheol/StrainGaugeDisplay-App/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/jars/classes.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="379471b2bd17d9737c050345c08e8c7d16589784">
-        <dex dex="/Users/Jaecheol/Documents/Workspace/Android/CycleHelper/app/build/intermediates/pre-dexed/debug/classes-ce3eebc7e46ce471a1fc1145a310e50fafb8c18c.jar" />
+        <dex dex="/Users/Jaecheol/StrainGaugeDisplay-App/app/build/intermediates/pre-dexed/debug/classes-c51b463059437a8dfdaa2c0418847e42e40db1d5.jar" />
     </item>
     <item
-        jar="/Users/Jaecheol/Documents/Workspace/Android/CycleHelper/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.1/jars/classes.jar"
+        jar="/Users/Jaecheol/StrainGaugeDisplay-App/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.1/jars/classes.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="09c5e804bc67fc0580360043dff067df574a60d4">
-        <dex dex="/Users/Jaecheol/Documents/Workspace/Android/CycleHelper/app/build/intermediates/pre-dexed/debug/classes-877683a0d8f8371ccdca8d5dc467015e3952b96c.jar" />
+        <dex dex="/Users/Jaecheol/StrainGaugeDisplay-App/app/build/intermediates/pre-dexed/debug/classes-9ed222a9473afbb01ebc3ab7e418569e3a1d7262.jar" />
+    </item>
+    <item
+        jar="/Users/Jaecheol/StrainGaugeDisplay-App/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="/Users/Jaecheol/StrainGaugeDisplay-App/app/build/intermediates/pre-dexed/debug/classes-7e70fac5f7b2537cc327f08b7dfc801e22a6c18a.jar" />
+    </item>
+    <item
+        jar="/Users/Jaecheol/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.1.1/support-annotations-23.1.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
+        <dex dex="/Users/Jaecheol/StrainGaugeDisplay-App/app/build/intermediates/pre-dexed/debug/support-annotations-23.1.1-5c806cdcbd98dab5e00d414d834e26ac92b16727.jar" />
+    </item>
+    <item
+        jar="/Users/Jaecheol/StrainGaugeDisplay-App/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
+        <dex dex="/Users/Jaecheol/StrainGaugeDisplay-App/app/build/intermediates/pre-dexed/debug/classes-c94634968e06f23f72ec407b6dc2890d5a739a59.jar" />
+    </item>
+    <item
+        jar="/Users/Jaecheol/StrainGaugeDisplay-App/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/libs/internal_impl-23.1.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="/Users/Jaecheol/StrainGaugeDisplay-App/app/build/intermediates/pre-dexed/debug/internal_impl-23.1.1-e1eacd29aedd742ce8d140ba54b982339dbafdf4.jar" />
     </item>
 
 </items>
