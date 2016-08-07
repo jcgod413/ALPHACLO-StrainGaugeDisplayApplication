@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/qhTab"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:layout_margin="20dp">
+
+        <Button
+            android:id="@+id/quadsRatio"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_margin="5dp"
+            android:background="@color/colorPrimary"
+            android:layout_centerHorizontal="true"
+            android:text="QUADS"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"/>
+
+        <Button
+            android:id="@+id/hamsRatio"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_margin="5dp"
+            android:layout_below="@id/quadsRatio"
+            android:layout_centerHorizontal="true"
+            android:background="@color/colorPrimary"
+            android:text="HAMS"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"/>
+    </RelativeLayout>
+
+</RelativeLayout>

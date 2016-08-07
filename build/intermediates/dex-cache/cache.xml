@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/Jaecheol/Documents/Workspace/Android/CycleHelper/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="379471b2bd17d9737c050345c08e8c7d16589784">
+        <dex dex="/Users/Jaecheol/Documents/Workspace/Android/CycleHelper/app/build/intermediates/pre-dexed/debug/classes-ce3eebc7e46ce471a1fc1145a310e50fafb8c18c.jar" />
+    </item>
+    <item
+        jar="/Users/Jaecheol/Documents/Workspace/Android/CycleHelper/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
+        <dex dex="/Users/Jaecheol/Documents/Workspace/Android/CycleHelper/app/build/intermediates/pre-dexed/debug/classes-877683a0d8f8371ccdca8d5dc467015e3952b96c.jar" />
+    </item>
+
+</items>
