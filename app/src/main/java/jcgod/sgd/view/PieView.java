@@ -13,7 +13,7 @@ import jcgod.sgd.R;
 /**
  * Created by Jaecheol on 16. 7. 4..
  */
-public class PercentView extends View {
+public class PieView extends View {
 
     Paint frontPaint;
     Paint backPaint;
@@ -27,15 +27,15 @@ public class PercentView extends View {
     public static int vertical = 1;
     public static int horizontal = 2;
 
-    public PercentView(Context context) {
+    public PieView(Context context) {
         super(context);
         initView();
     }
-    public PercentView(Context context, AttributeSet attrs) {
+    public PieView(Context context, AttributeSet attrs) {
         super(context, attrs);
         initView();
     }
-    public PercentView(Context context, AttributeSet attrs, int defStyle)   {
+    public PieView(Context context, AttributeSet attrs, int defStyle)   {
         super(context, attrs, defStyle);
         initView();
     }

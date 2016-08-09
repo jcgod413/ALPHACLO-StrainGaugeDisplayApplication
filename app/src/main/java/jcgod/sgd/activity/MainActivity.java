@@ -623,40 +623,40 @@ public class MainActivity extends AppCompatActivity {
             return (int)Math.round((double)hams / (double)(quads+hams) * 100.0d);
         }
 
-        public int getLeftRatioByAll()  {
-            int left = getLeftAverage();
-            int right = getRightAverage();
-            int quads = getQuadsAverage();
-            int hams = getHamsAverage();
+        public int getLeftHamsRatioByAll()  {
+            double leftHams = (leftHamsUp+leftHamsDown) / 2;
+            double leftQuads = (leftQuadsUp+leftQuadsDown) / 2;
+            double rightHams = (rightHamsUp+rightHamsDown) / 2;
+            double rightQuads = (rightQuadsUp+rightQuadsDown) / 2;
 
-            return (int)Math.round((double)left / (double)(left+right+quads+hams) * 100.0d);
+            return (int)Math.round(leftHams / (leftHams+leftQuads+rightHams+rightQuads) * 100.0d);
         }
 
-        public int getRightRatioByAll() {
-            int left = getLeftAverage();
-            int right = getRightAverage();
-            int quads = getQuadsAverage();
-            int hams = getHamsAverage();
+        public int getLeftQuadsRatioByAll() {
+            double leftHams = (leftHamsUp+leftHamsDown) / 2;
+            double leftQuads = (leftQuadsUp+leftQuadsDown) / 2;
+            double rightHams = (rightHamsUp+rightHamsDown) / 2;
+            double rightQuads = (rightQuadsUp+rightQuadsDown) / 2;
 
-            return (int)Math.round((double)right / (double)(left+right+quads+hams) * 100.0d);
+            return (int)Math.round(leftQuads / (leftHams+leftQuads+rightHams+rightQuads) * 100.0d);
         }
 
-        public int getQuadsRatioByAll() {
-            int left = getLeftAverage();
-            int right = getRightAverage();
-            int quads = getQuadsAverage();
-            int hams = getHamsAverage();
+        public int getRightHamsRatioByAll() {
+            double leftHams = (leftHamsUp+leftHamsDown) / 2;
+            double leftQuads = (leftQuadsUp+leftQuadsDown) / 2;
+            double rightHams = (rightHamsUp+rightHamsDown) / 2;
+            double rightQuads = (rightQuadsUp+rightQuadsDown) / 2;
 
-            return (int)Math.round((double)quads / (double)(left+right+quads+hams) * 100.0d);
+            return (int)Math.round(rightHams / (leftHams+leftQuads+rightHams+rightQuads) * 100.0d);
         }
 
-        public int getHamsRatioByAll()  {
-            int left = getLeftAverage();
-            int right = getRightAverage();
-            int quads = getQuadsAverage();
-            int hams = getHamsAverage();
+        public int getRightQuadsRatioByAll()  {
+            double leftHams = (leftHamsUp+leftHamsDown) / 2;
+            double leftQuads = (leftQuadsUp+leftQuadsDown) / 2;
+            double rightHams = (rightHamsUp+rightHamsDown) / 2;
+            double rightQuads = (rightQuadsUp+rightQuadsDown) / 2;
 
-            return (int)Math.round((double)hams / (double)(left+right+quads+hams) * 100.0d);
+            return (int)Math.round(rightQuads / (leftHams+leftQuads+rightHams+rightQuads) * 100.0d);
         }
 
         public int getAccumulatedLeftRatio()    {
@@ -687,40 +687,40 @@ public class MainActivity extends AppCompatActivity {
             return (int)Math.round(hams / (quads+hams) * 100.0d);
         }
 
-        public int getAccumulatedLeftRatioByAll()  {
-            double left = getAccumulatedLeftAverage();
-            double right = getAccumualtedRightAverage();
-            double quads = getAccumulatedQuadsAverage();
-            double hams = getAccumulatedHamsAverage();
+        public int getAccumulatedLeftHamsRatioByAll()  {
+            double leftHams = (acc_leftHamsUp+acc_leftHamsDown) / 2;
+            double leftQuads = (acc_leftQuadsUp+acc_leftQuadsDown) / 2;
+            double rightHams = (acc_rightHamsUp+acc_rightHamsDown) / 2;
+            double rightQuads = (acc_rightQuadsUp+acc_rightQuadsDown) / 2;
 
-            return (int)Math.round(left / (left+right+quads+hams) * 100.0d);
+            return (int)Math.round(leftHams / (leftHams+leftQuads+rightHams+rightQuads) * 100.0d);
         }
 
-        public int getAccumulatedRightRatioByAll() {
-            double left = getAccumulatedLeftAverage();
-            double right = getAccumualtedRightAverage();
-            double quads = getAccumulatedQuadsAverage();
-            double hams = getAccumulatedHamsAverage();
+        public int getAccumulatedLeftQuadsRatioByAll() {
+            double leftHams = (acc_leftHamsUp+acc_leftHamsDown) / 2;
+            double leftQuads = (acc_leftQuadsUp+acc_leftQuadsDown) / 2;
+            double rightHams = (acc_rightHamsUp+acc_rightHamsDown) / 2;
+            double rightQuads = (acc_rightQuadsUp+acc_rightQuadsDown) / 2;
 
-            return (int)Math.round(right / (left+right+quads+hams) * 100.0d);
+            return (int)Math.round(leftQuads / (leftHams+leftQuads+rightHams+rightQuads) * 100.0d);
         }
 
-        public int getAccumulatedQuadsRatioByAll() {
-            double left = getAccumulatedLeftAverage();
-            double right = getAccumualtedRightAverage();
-            double quads = getAccumulatedQuadsAverage();
-            double hams = getAccumulatedHamsAverage();
+        public int getAccumulatedRightHamsRatioByAll() {
+            double leftHams = (acc_leftHamsUp+acc_leftHamsDown) / 2;
+            double leftQuads = (acc_leftQuadsUp+acc_leftQuadsDown) / 2;
+            double rightHams = (acc_rightHamsUp+acc_rightHamsDown) / 2;
+            double rightQuads = (acc_rightQuadsUp+acc_rightQuadsDown) / 2;
 
-            return (int)Math.round(quads / (left+right+quads+hams) * 100.0d);
+            return (int)Math.round(rightHams / (leftHams+leftQuads+rightHams+rightQuads) * 100.0d);
         }
 
-        public int getAccumulatedHamsRatioByAll()  {
-            double left = getAccumulatedLeftAverage();
-            double right = getAccumualtedRightAverage();
-            double quads = getAccumulatedQuadsAverage();
-            double hams = getAccumulatedHamsAverage();
+        public int getAccumulatedRightQuadsRatioByAll()  {
+            double leftHams = (acc_leftHamsUp+acc_leftHamsDown) / 2;
+            double leftQuads = (acc_leftQuadsUp+acc_leftQuadsDown) / 2;
+            double rightHams = (acc_rightHamsUp+acc_rightHamsDown) / 2;
+            double rightQuads = (acc_rightQuadsUp+acc_rightQuadsDown) / 2;
 
-            return (int)Math.round(hams / (left+right+quads+hams) * 100.0d);
+            return (int)Math.round(rightQuads / (leftHams+leftQuads+rightHams+rightQuads) * 100.0d);
         }
     }
 }

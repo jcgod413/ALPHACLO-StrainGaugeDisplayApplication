@@ -11,11 +11,9 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 import jcgod.sgd.R;
 import jcgod.sgd.activity.MainActivity;
-import jcgod.sgd.view.PercentView;
+import jcgod.sgd.view.PieView;
 
 /**
  * Created by Jaecheol on 16. 6. 17..
@@ -35,7 +33,7 @@ public class LRRatioTab extends Fragment  {
 
     boolean isAvg = false;
 
-    PercentView lrView;
+    PieView lrView;
 
     TextView avgText;
 
@@ -81,8 +79,8 @@ public class LRRatioTab extends Fragment  {
             }
         });
 
-        lrView = (PercentView)view.findViewById(R.id.lrView);
-        lrView.setMode(PercentView.horizontal);
+        lrView = (PieView)view.findViewById(R.id.lrView);
+        lrView.setMode(PieView.horizontal);
 
         avgText = (TextView)view.findViewById(R.id.lrAvgText);
         avgText.setVisibility(View.INVISIBLE);

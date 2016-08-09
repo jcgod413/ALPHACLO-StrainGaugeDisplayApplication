@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <jcgod.sgd.view.PercentView
+    <jcgod.sgd.view.PieView
         android:id="@+id/lrView"
         android:layout_width="300dp"
         android:layout_height="300dp"

@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import jcgod.sgd.R;
 import jcgod.sgd.activity.MainActivity;
-import jcgod.sgd.view.PercentView;
+import jcgod.sgd.view.PieView;
 
 /**
  * Created by Jaecheol on 16. 6. 17..
@@ -33,7 +33,7 @@ public class QHRatioTab extends Fragment {
     boolean isAvg = false;
 
 
-    PercentView qhView;
+    PieView qhView;
 
     TextView avgText;
 
@@ -95,8 +95,8 @@ public class QHRatioTab extends Fragment {
             }
         });
 
-        qhView = (PercentView)view.findViewById(R.id.qhView);
-        qhView.setMode(PercentView.vertical);
+        qhView = (PieView)view.findViewById(R.id.qhView);
+        qhView.setMode(PieView.vertical);
 
         avgText = (TextView)view.findViewById(R.id.qhAvgText);
         avgText.setVisibility(View.INVISIBLE);
