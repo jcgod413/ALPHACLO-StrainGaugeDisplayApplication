@@ -9,9 +9,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import jcgod.sgd.R;
 import jcgod.sgd.activity.MainActivity;
+import jcgod.sgd.view.PercentView;
 
 /**
  * Created by Jaecheol on 16. 6. 17..
@@ -30,6 +34,10 @@ public class LRRatioTab extends Fragment  {
     RelativeLayout lrTab;
 
     boolean isAvg = false;
+
+    PercentView lrView;
+
+    TextView avgText;
 
     /**
      * onCreateView
@@ -72,6 +80,12 @@ public class LRRatioTab extends Fragment  {
                 update();
             }
         });
+
+        lrView = (PercentView)view.findViewById(R.id.lrView);
+        lrView.setMode(PercentView.horizontal);
+
+        avgText = (TextView)view.findViewById(R.id.lrAvgText);
+        avgText.setVisibility(View.INVISIBLE);
     }
 
     /**
@@ -110,6 +124,9 @@ public class LRRatioTab extends Fragment  {
             layoutParams = rightRatio.getLayoutParams();
             layoutParams.height = sensor.getAccumulatedRightRatio() * 10;
             rightRatio.setLayoutParams(layoutParams);
+
+            lrView.setPercentage(sensor.getAccumulatedLeftRatio());
+            avgText.setVisibility(View.VISIBLE);
         }
         else {
             leftText = "LEFT\n" + sensor.getLeftRatio();
@@ -122,6 +139,9 @@ public class LRRatioTab extends Fragment  {
             layoutParams = rightRatio.getLayoutParams();
             layoutParams.height = sensor.getRightRatio() * 10;
             rightRatio.setLayoutParams(layoutParams);
+
+            lrView.setPercentage(sensor.getLeftRatio());
+            avgText.setVisibility(View.INVISIBLE);
         }
 
 
