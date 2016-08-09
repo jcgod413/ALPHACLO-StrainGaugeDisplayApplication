@@ -150,7 +150,8 @@ public class AllRatioTab extends Fragment {
             int leftHams = sensor.getAccumulatedLeftHamsRatioByAll();
             int leftQuads = sensor.getAccumulatedLeftQuadsRatioByAll();
             int rightHams = sensor.getAccumulatedRightHamsRatioByAll();
-            int rightQuads = sensor.getAccumulatedRightQuadsRatioByAll();
+//            int rightQuads = sensor.getAccumulatedRightQuadsRatioByAll();
+            int rightQuads = 100 - leftHams - leftQuads - rightHams;
 
             donutView.setPercent(leftQuads, leftHams, rightQuads, rightHams);
 
@@ -180,7 +181,8 @@ public class AllRatioTab extends Fragment {
             int leftHams = sensor.getLeftHamsRatioByAll();
             int leftQuads = sensor.getLeftQuadsRatioByAll();
             int rightHams = sensor.getRightHamsRatioByAll();
-            int rightQuads = sensor.getRightQuadsRatioByAll();
+//            int rightQuads = sensor.getRightQuadsRatioByAll();
+            int rightQuads = 100 - leftHams - leftQuads - rightHams;
 
             donutView.setPercent(leftQuads, leftHams, rightQuads, rightHams);
 
