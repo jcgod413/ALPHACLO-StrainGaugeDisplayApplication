@@ -9,9 +9,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import jcgod.sgd.R;
 import jcgod.sgd.activity.MainActivity;
+import jcgod.sgd.view.PercentView;
 
 /**
  * Created by Jaecheol on 16. 6. 17..
@@ -29,6 +31,11 @@ public class QHRatioTab extends Fragment {
     RelativeLayout qhTab;
 
     boolean isAvg = false;
+
+
+    PercentView qhView;
+
+    TextView avgText;
 
     /**
      * onCreateView
@@ -87,6 +94,12 @@ public class QHRatioTab extends Fragment {
                 update();
             }
         });
+
+        qhView = (PercentView)view.findViewById(R.id.qhView);
+        qhView.setMode(PercentView.vertical);
+
+        avgText = (TextView)view.findViewById(R.id.qhAvgText);
+        avgText.setVisibility(View.INVISIBLE);
     }
 
     /**
@@ -109,6 +122,9 @@ public class QHRatioTab extends Fragment {
             layoutParams = hamsRatio.getLayoutParams();
             layoutParams.width = sensor.getAccumulatedHamsRatio() * 10;
             hamsRatio.setLayoutParams(layoutParams);
+
+            qhView.setPercentage(sensor.getAccumulatedQuadsRatio());
+            avgText.setVisibility(View.VISIBLE);
         }
         else {
             quadsText = "QUADS\n" + sensor.getQuadsRatio();
@@ -121,6 +137,9 @@ public class QHRatioTab extends Fragment {
             layoutParams = hamsRatio.getLayoutParams();
             layoutParams.width = sensor.getHamsRatio() * 10;
             hamsRatio.setLayoutParams(layoutParams);
+
+            qhView.setPercentage(sensor.getQuadsRatio());
+            avgText.setVisibility(View.INVISIBLE);
         }
 
         quadsRatio.setText(quadsText);
