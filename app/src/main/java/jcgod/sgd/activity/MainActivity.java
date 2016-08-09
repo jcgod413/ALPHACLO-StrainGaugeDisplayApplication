@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == R.id.action_report) {
-            Toast.makeText(this, "액션버튼 이벤트", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(MainActivity.this, ReportActivity.class));
             return true;
         }
 
