@@ -98,6 +98,22 @@ public class DonutView extends View {
         drawDonut(canvas, paint, 0, 359.9f);
 
         paint.setTextSize(50);
+//
+//        // green
+//        setGradient(0xff84BC3D,0xff5B8829);
+//        drawDonut(canvas,paint, 0,60);
+//
+//        //red
+//        setGradient(0xffe04a2f,0xffB7161B);
+//        drawDonut(canvas,paint, 60,60);
+//
+//        // blue
+//        setGradient(0xff4AB6C1,0xff2182AD);
+//        drawDonut(canvas,paint, 120,60);
+//
+//        // yellow
+//        setGradient(0xffFFFF00,0xfffed325);
+//        drawDonut(canvas,paint, 180,180);
 
         //red
         float redStart = 45 - (red * 1.8f);
@@ -194,11 +210,17 @@ public class DonutView extends View {
     }
 
     public void setPercent(int yellow, int blue, int green, int red)    {
-        this.yellow = yellow;
-        this.blue = blue;
-        this.green = green;
-        this.red = red;
+        if( yellow != this.yellow ||
+            blue != this.blue ||
+            green != this.green ||
+            red != this.red )
+        {
+            this.yellow = yellow;
+            this.blue = blue;
+            this.green = green;
+            this.red = red;
 
-        invalidate();
+            invalidate();
+        }
     }
 }

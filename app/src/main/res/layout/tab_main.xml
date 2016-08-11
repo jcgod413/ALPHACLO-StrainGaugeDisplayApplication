@@ -98,7 +98,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Calory(min)"
+                android:text="Calory"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:textAlignment="center"/>

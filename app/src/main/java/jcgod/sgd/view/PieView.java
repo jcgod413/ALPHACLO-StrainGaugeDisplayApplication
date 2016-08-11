@@ -17,8 +17,10 @@ public class PieView extends View {
 
     Paint frontPaint;
     Paint backPaint;
+    Paint innerPaint;
 
-    RectF rect;
+    RectF outterRect;
+    RectF innerRect;
 
     int percentage = 0;
 
@@ -45,15 +47,21 @@ public class PieView extends View {
         frontPaint.setColor(getContext().getResources().getColor(R.color.colorAccent));
         frontPaint.setAntiAlias(true);
         frontPaint.setStyle(Paint.Style.FILL);
-        frontPaint.setTextSize(50);
+        frontPaint.setTextSize(64);
 
         backPaint = new Paint();
         backPaint.setColor(getContext().getResources().getColor(R.color.colorPrimary));
         backPaint.setAntiAlias(true);
         backPaint.setStyle(Paint.Style.FILL);
-        backPaint.setTextSize(50);
+        backPaint.setTextSize(64);
 
-        rect = new RectF();
+        innerPaint = new Paint();
+        innerPaint.setColor(0xffffffff);
+        innerPaint.setAntiAlias(true);
+        innerPaint.setStyle(Paint.Style.FILL);
+
+        outterRect = new RectF();
+        innerRect = new RectF();
     }
 
     @Override
@@ -63,11 +71,16 @@ public class PieView extends View {
         int left = 0;
         int width = getWidth();
         int top = 0;
-        rect.set(left, top, left + width, top + width);
-        canvas.drawArc(rect, -90, 360, true, backPaint);
+        int diff = 160;
 
-        if (mode == vertical) {
-            canvas.drawArc(rect, 90f - (1.8f * percentage), 3.6f * percentage, true, frontPaint);
+        outterRect.set(left, top, left + width, top + width);
+        innerRect.set(left + diff, top + diff, left + width - diff, top + width - diff);
+
+        canvas.drawArc(outterRect, -90, 360, true, backPaint);
+        canvas.drawArc(innerRect, -90, 360, true, innerPaint);
+
+        if ( mode == vertical ) {
+            canvas.drawArc(outterRect, 90f - (1.8f * percentage), 3.6f * percentage, true, frontPaint);
             backPaint.setColor(Color.WHITE);
             frontPaint.setColor(Color.WHITE);
             if( percentage == 0 )   {
@@ -86,7 +99,7 @@ public class PieView extends View {
             frontPaint.setColor(getContext().getResources().getColor(R.color.colorAccent));
         }
         else if( mode == horizontal )   {
-            canvas.drawArc(rect, 180f - (1.8f * percentage), 3.6f * percentage, true, frontPaint);
+            canvas.drawArc(outterRect, 180f - (1.8f * percentage), 3.6f * percentage, true, frontPaint);
             backPaint.setColor(Color.WHITE);
             frontPaint.setColor(Color.WHITE);
             canvas.drawText(String.valueOf(percentage), 50f, width / 2f / 14f * 15f, backPaint);
@@ -94,7 +107,7 @@ public class PieView extends View {
             backPaint.setColor(getContext().getResources().getColor(R.color.colorPrimary));
             frontPaint.setColor(getContext().getResources().getColor(R.color.colorAccent));
         }
-
+        canvas.drawArc(innerRect, -90, 360, true, innerPaint);
     }
 
     public void setPercentage(int percentage) {
