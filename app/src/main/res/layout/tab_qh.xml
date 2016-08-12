@@ -12,8 +12,8 @@
 
         <jcgod.sgd.view.PieView
             android:id="@+id/qhView"
-            android:layout_width="300dp"
-            android:layout_height="300dp"/>
+            android:layout_width="280dp"
+            android:layout_height="280dp"/>
         <TextView
             android:id="@+id/qhAvgText"
             android:layout_width="match_parent"

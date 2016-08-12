@@ -20,8 +20,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="jcgod.sgd.activity.LoginActivity" android:screenOrientation="portrait"/>
-        <activity android:name="jcgod.sgd.activity.MainActivity" />
+        <activity android:name="jcgod.sgd.activity.LoginActivity"  android:screenOrientation="portrait"/>
+        <activity android:name="jcgod.sgd.activity.MainActivity"   android:configChanges="orientation|screenSize"/>
         <activity android:name="jcgod.sgd.activity.ReportActivity" android:screenOrientation="portrait" />
     </application>
 

@@ -209,6 +209,8 @@ public class MainTab extends Fragment {
          * stop
          */
         public void stop()  {
+            showReportDialog();
+
             running = false;
 
             distance.setText("0m");
@@ -218,8 +220,6 @@ public class MainTab extends Fragment {
 
             chronometer.stop();
             chronometer.setBase(SystemClock.elapsedRealtime());
-
-            showReportDialog();
         }
     }
 }
