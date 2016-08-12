@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:padding="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp">
+
+    <TextView
+        android:id="@+id/item_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date" />
+
+    <TextView
+        android:id="@+id/item_distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Distance"
+        android:layout_above="@+id/item_lrqh"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/item_lr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="L/R"
+        android:layout_alignTop="@+id/item_qh"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/item_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Time"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/item_calory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calory"
+        android:layout_below="@+id/item_time"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/item_qh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Q/H"
+        android:layout_marginStart="50dp"
+        android:layout_alignTop="@+id/item_lrqh"
+        android:layout_toEndOf="@+id/item_distance" />
+
+    <TextView
+        android:id="@+id/item_lrqh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="L/R/Q/H"
+        android:layout_below="@+id/item_calory"
+        android:layout_alignEnd="@+id/item_time" />
+
+</RelativeLayout>
