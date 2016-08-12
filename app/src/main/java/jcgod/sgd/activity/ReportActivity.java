@@ -7,7 +7,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
+
+import java.util.List;
 
 import jcgod.sgd.R;
 
@@ -15,6 +18,8 @@ import jcgod.sgd.R;
  * Created by Jaecheol on 16. 8. 9..
  */
 public class ReportActivity extends AppCompatActivity {
+
+    ListView reportList;
 
     /**
      * onCreate
@@ -60,6 +65,6 @@ public class ReportActivity extends AppCompatActivity {
      * initComponents
      */
     private void initComponents()    {
-
+        reportList = (ListView)findViewById(R.id.reportList);
     }
 }
