@@ -5,71 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <jcgod.sgd.view.DonutView
-        android:id="@+id/donutView"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        customviews:radius="150dp"
-        android:layout_gravity="center"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
-    <TextView
-        android:id="@+id/allAvgText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="(avg)"
-        android:layout_below="@id/donutView"
-        android:layout_centerHorizontal="true"
-        android:textSize="24sp"/>
+        android:orientation="vertical"
+        android:layout_centerInParent="true">
 
-    <!--<Button-->
-        <!--android:id="@+id/all_leftRatio"-->
-        <!--android:layout_width="100dp"-->
-        <!--android:layout_height="200dp"-->
-        <!--android:layout_weight="1"-->
-        <!--android:background="@color/colorPrimary"-->
-        <!--android:text="Left"-->
-        <!--android:textStyle="bold"-->
-        <!--android:textColor="@android:color/white"-->
-        <!--android:layout_centerVertical="true"-->
-        <!--android:layout_alignParentLeft="true"-->
-        <!--android:layout_marginLeft="20dp" />-->
-
-    <!--<Button-->
-        <!--android:id="@+id/all_rightRatio"-->
-        <!--android:layout_width="100dp"-->
-        <!--android:layout_height="200dp"-->
-        <!--android:layout_weight="1"-->
-        <!--android:background="@color/colorPrimary"-->
-        <!--android:text="Right"-->
-        <!--android:textStyle="bold"-->
-        <!--android:textColor="@android:color/white"-->
-        <!--android:layout_centerVertical="true"-->
-        <!--android:layout_alignParentRight="true"-->
-        <!--android:layout_marginRight="20dp" />-->
-
-    <!--<Button-->
-        <!--android:id="@+id/all_quadsRatio"-->
-        <!--android:layout_width="200dp"-->
-        <!--android:layout_height="100dp"-->
-        <!--android:background="@color/colorPrimary"-->
-        <!--android:text="QUADS"-->
-        <!--android:textStyle="bold"-->
-        <!--android:textColor="@android:color/white"-->
-        <!--android:layout_alignParentTop="true"-->
-        <!--android:layout_centerHorizontal="true"-->
-        <!--android:layout_marginTop="50dp"/>-->
-
-    <!--<Button-->
-        <!--android:id="@+id/all_hamsRatio"-->
-        <!--android:layout_width="200dp"-->
-        <!--android:layout_height="100dp"-->
-        <!--android:background="@color/colorPrimary"-->
-        <!--android:text="HAMS"-->
-        <!--android:textStyle="bold"-->
-        <!--android:textColor="@android:color/white"-->
-        <!--android:layout_alignParentBottom="true"-->
-        <!--android:layout_centerHorizontal="true"-->
-        <!--android:layout_marginBottom="50dp"/>-->
+        <jcgod.sgd.view.DonutView
+            android:id="@+id/donutView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            customviews:radius="150dp"
+            android:layout_gravity="center"/>
+        <TextView
+            android:id="@+id/allAvgText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="(avg)"
+            android:textSize="24sp"/>
+    </LinearLayout>
 
 </RelativeLayout>

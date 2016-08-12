@@ -15,8 +15,11 @@
         android:textStyle="bold"
         android:textColor="@android:color/white"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="132dp" />
+        android:layout_marginTop="100dp"
+        android:layout_alignRight="@+id/startButton"
+        android:layout_alignEnd="@+id/startButton"
+        android:layout_alignLeft="@+id/startButton"
+        android:layout_alignStart="@+id/startButton" />
 
     <Button
         android:id="@+id/startButton"

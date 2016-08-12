@@ -16,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="80dp">
+        android:layout_centerInParent="true">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -188,40 +188,5 @@
         </LinearLayout>
 
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="50dp"
-        android:id="@+id/linearLayout"
-        android:layout_centerHorizontal="true">
-
-        <Button
-            android:id="@+id/playButton"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:background="@drawable/bt_play"
-            android:elevation="4dp"/>
-
-        <Button
-            android:id="@+id/pauseButton"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:background="@drawable/bt_pause"
-            android:elevation="4dp"/>
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/stopButton"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:background="@drawable/bt_stop"
-        android:elevation="4dp"
-        android:layout_marginLeft="20dp"
-        android:layout_alignTop="@+id/linearLayout"
-        android:layout_toRightOf="@+id/linearLayout"
-        android:layout_toEndOf="@+id/linearLayout" />
 
 </RelativeLayout>

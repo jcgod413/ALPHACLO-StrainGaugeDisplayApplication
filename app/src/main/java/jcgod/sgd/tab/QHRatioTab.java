@@ -73,18 +73,6 @@ public class QHRatioTab extends Fragment {
      * initView
      */
     private void initView() {
-        ViewGroup.LayoutParams layoutParams;
-
-        quadsRatio = (Button)view.findViewById(R.id.quadsRatio);
-        layoutParams = quadsRatio.getLayoutParams();
-        layoutParams.width = 0;
-        quadsRatio.setLayoutParams(layoutParams);
-
-        hamsRatio = (Button)view.findViewById(R.id.hamsRatio);
-        layoutParams = hamsRatio.getLayoutParams();
-        layoutParams.width = 0;
-        hamsRatio.setLayoutParams(layoutParams);
-
         qhTab = (RelativeLayout)view.findViewById(R.id.qhTab);
         qhTab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -106,43 +94,13 @@ public class QHRatioTab extends Fragment {
      * update
      */
     public void update() {
-        ViewGroup.LayoutParams layoutParams;
-
-        String quadsText;
-        String hamsText;
-
         if( isAvg ) {
-            quadsText = "QUADS\n(avg)\n" + sensor.getAccumulatedQuadsRatio();
-            hamsText = "HAMS\n(avg)\n" + sensor.getAccumulatedHamsRatio();
-
-            layoutParams = quadsRatio.getLayoutParams();
-            layoutParams.width = sensor.getAccumulatedQuadsRatio() * 10;
-            quadsRatio.setLayoutParams(layoutParams);
-
-            layoutParams = hamsRatio.getLayoutParams();
-            layoutParams.width = sensor.getAccumulatedHamsRatio() * 10;
-            hamsRatio.setLayoutParams(layoutParams);
-
             qhView.setPercentage(sensor.getAccumulatedQuadsRatio());
             avgText.setVisibility(View.VISIBLE);
         }
         else {
-            quadsText = "QUADS\n" + sensor.getQuadsRatio();
-            hamsText = "HAMS\n" + sensor.getHamsRatio();
-
-            layoutParams = quadsRatio.getLayoutParams();
-            layoutParams.width = sensor.getQuadsRatio() * 10;
-            quadsRatio.setLayoutParams(layoutParams);
-
-            layoutParams = hamsRatio.getLayoutParams();
-            layoutParams.width = sensor.getHamsRatio() * 10;
-            hamsRatio.setLayoutParams(layoutParams);
-
             qhView.setPercentage(sensor.getQuadsRatio());
             avgText.setVisibility(View.INVISIBLE);
         }
-
-        quadsRatio.setText(quadsText);
-        hamsRatio.setText(hamsText);
     }
 }

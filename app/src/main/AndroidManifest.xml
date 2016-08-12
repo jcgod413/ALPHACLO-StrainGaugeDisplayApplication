@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity android:name="jcgod.sgd.activity.LoginActivity" android:screenOrientation="portrait"/>
-        <activity android:name="jcgod.sgd.activity.MainActivity" android:screenOrientation="portrait" />
+        <activity android:name="jcgod.sgd.activity.MainActivity" />
         <activity android:name="jcgod.sgd.activity.ReportActivity" android:screenOrientation="portrait" />
     </application>
 

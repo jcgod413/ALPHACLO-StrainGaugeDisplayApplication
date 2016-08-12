@@ -30,14 +30,6 @@ public class MainTab extends Fragment {
 
     MainActivity.Sensor sensor;
 
-    final int START = 111;
-    final int PAUSE = 112;
-    final int STOP = 113;
-
-    Button playButton;
-    Button pauseButton;
-    Button stopButton;
-
     MainInfo info;
 
     ProgressDialog alertDialog;
@@ -91,34 +83,6 @@ public class MainTab extends Fragment {
 
         alertDialog = new ProgressDialog(view.getContext());
 
-        playButton = (Button)view.findViewById(R.id.playButton);
-        playButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sendStartSignal();
-            }
-        });
-
-        pauseButton = (Button)view.findViewById(R.id.pauseButton);
-        pauseButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sendPauseSignal();
-            }
-        });
-        pauseButton.setVisibility(View.GONE);
-
-        stopButton = (Button)view.findViewById(R.id.stopButton);
-        stopButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sendStopSignal();
-
-                showReportDialog();
-            }
-        });
-        stopButton.setVisibility(View.GONE);
-
         lrText = (TextView)view.findViewById(R.id.main_lrText);
         qhText = (TextView)view.findViewById(R.id.main_qhText);
 
@@ -162,51 +126,9 @@ public class MainTab extends Fragment {
     }
 
     /**
-     * sendStartSignal
-     */
-    private void sendStartSignal()  {
-        this.handler.obtainMessage(START).sendToTarget();
-
-        playButton.setVisibility(View.GONE);
-        pauseButton.setVisibility(View.VISIBLE);
-
-        info.start();
-    }
-
-    /**
-     * sendStopSignal
-     */
-    private void sendPauseSignal()   {
-        this.handler.obtainMessage(PAUSE).sendToTarget();
-
-        info.pause();
-    }
-
-    /**
-     * sendStopSignal
-     */
-    private void sendStopSignal()   {
-        this.handler.obtainMessage(PAUSE).sendToTarget();
-
-        alertDialog.setMessage("loading...");
-        alertDialog.setCancelable(false);
-        alertDialog.show();
-
-        // 실제 정지되는데 딜레이가 있으므로
-        Runnable runnable = new Runnable() {
-            @Override
-            public void run() {
-                info.stop();
-                alertDialog.dismiss();
-            }
-        };
-        new Handler().postDelayed(runnable, 1200);
-    }
-
-    /**
      * showReportDialog
      */
-    private void showReportDialog() {
+    public void showReportDialog() {
         String title = "Activity Report";
         String contents = "Time : " + info.chronometer.getText() + "\n"
                 + "Distance : " + info.distance.getText() + "\n"
@@ -271,10 +193,6 @@ public class MainTab extends Fragment {
             timeWhenPaused = 0;
 
             chronometer.start();
-
-            playButton.setVisibility(View.GONE);
-            pauseButton.setVisibility(View.VISIBLE);
-            stopButton.setVisibility(View.VISIBLE);
         }
 
         /**
@@ -285,10 +203,6 @@ public class MainTab extends Fragment {
 
             timeWhenPaused = chronometer.getBase() - SystemClock.elapsedRealtime();
             chronometer.stop();
-
-            playButton.setVisibility(View.VISIBLE);
-            pauseButton.setVisibility(View.GONE);
-            stopButton.setVisibility(View.GONE);
         }
 
         /**
@@ -304,10 +218,6 @@ public class MainTab extends Fragment {
 
             chronometer.stop();
             chronometer.setBase(SystemClock.elapsedRealtime());
-
-            playButton.setVisibility(View.VISIBLE);
-            pauseButton.setVisibility(View.GONE);
-            stopButton.setVisibility(View.GONE);
         }
     }
 }

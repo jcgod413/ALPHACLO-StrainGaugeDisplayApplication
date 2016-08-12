@@ -66,6 +66,10 @@ public class MainActivity extends AppCompatActivity {
     final int PAUSE = 112;
     final int STOP = 113;
 
+    MenuItem playItem;
+    MenuItem pauseItem;
+    MenuItem stopItem;
+
     /**
      * onCreate
      * @param savedInstanceState
@@ -87,8 +91,12 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
 
-        MenuItem item = menu.findItem(R.id.action_pause);
-        item.setVisible(false);
+        playItem = menu.findItem(R.id.action_play);
+        pauseItem = menu.findItem(R.id.action_pause);
+        stopItem = menu.findItem(R.id.action_stop);
+
+        pauseItem.setVisible(false);
+        stopItem.setVisible(false);
 
         return true;
     }
@@ -102,12 +110,75 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if (id == R.id.action_report) {
-            startActivity(new Intent(MainActivity.this, ReportActivity.class));
-            return true;
+        switch( id )    {
+            case R.id.action_play:
+                start();
+                return true;
+            case R.id.action_pause:
+                pause();
+                return true;
+            case R.id.action_stop:
+                stop();
+                return true;
+            case R.id.action_report:
+                startActivity(new Intent(MainActivity.this, ReportActivity.class));
+                return true;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * start
+     */
+    private void start()    {
+        playItem.setVisible(false);
+        pauseItem.setVisible(true);
+        stopItem.setVisible(true);
+
+        sendSignal(START);
+    }
+
+    /**
+     * pause
+     */
+    private void pause()    {
+        playItem.setVisible(true);
+        pauseItem.setVisible(false);
+
+        sendSignal(PAUSE);
+    }
+
+    /**
+     * stop
+     */
+    private void stop() {
+        playItem.setVisible(true);
+        pauseItem.setVisible(false);
+        stopItem.setVisible(false);
+
+        sendSignal(STOP);
+
+        adapter.showReportDialog();
+    }
+
+    /**
+     * sendSignal
+     * @param what
+     */
+    private void sendSignal(int what)   {
+        switch( what ) {
+            case START:
+                sendData("S");
+                break;
+            case PAUSE:
+                for (int i = 0; i < 50; i++)
+                    sendData("P");
+                break;
+            case STOP:
+                sendData("E");
+                break;
+        }
     }
 
     /**
@@ -459,18 +530,6 @@ public class MainActivity extends AppCompatActivity {
         {
             switch( message.what )
             {
-                case START:
-                    sendData("S");
-                    break;
-                case PAUSE:
-                    for(int i=0; i<50; i++)
-                        sendData("P");
-                    break;
-                case STOP:
-                    sendData("E");
-                    break;
-                default:
-                    super.handleMessage(message);
             }
         }
     }

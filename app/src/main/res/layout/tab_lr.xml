@@ -4,49 +4,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <jcgod.sgd.view.PieView
-        android:id="@+id/lrView"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
-    <TextView
-        android:id="@+id/lrAvgText"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="(avg)"
-        android:layout_below="@id/lrView"
-        android:layout_centerHorizontal="true"
-        android:textSize="24sp"/>
+        android:orientation="vertical"
+        android:layout_centerInParent="true">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_centerInParent="true"
-        android:visibility="gone">
-
-        <Button
-            android:id="@+id/leftRatio"
+        <jcgod.sgd.view.PieView
+            android:id="@+id/lrView"
+            android:layout_width="300dp"
+            android:layout_height="300dp"/>
+        <TextView
+            android:id="@+id/lrAvgText"
             android:layout_width="match_parent"
-            android:layout_height="400dp"
-            android:layout_weight="1"
-            android:layout_margin="5dp"
-            android:background="@color/colorPrimary"
-            android:text="Left"
-            android:textStyle="bold"
-            android:textColor="@android:color/white"/>
-
-        <Button
-            android:id="@+id/rightRatio"
-            android:layout_width="match_parent"
-            android:layout_height="400dp"
-            android:layout_weight="1"
-            android:layout_margin="5dp"
-            android:background="@color/colorPrimary"
-            android:text="Right"
-            android:textStyle="bold"
-            android:textColor="@android:color/white"/>
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="(avg)"
+            android:textSize="24sp"/>
     </LinearLayout>
-
 </RelativeLayout>

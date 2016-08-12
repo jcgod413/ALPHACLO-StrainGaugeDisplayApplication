@@ -99,4 +99,11 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
         QHTab.update();
         allRatioTab.update();
     }
+
+    /**
+     * showReportDialog
+     */
+    public void showReportDialog()  {
+        mainTab.showReportDialog();
+    }
 }

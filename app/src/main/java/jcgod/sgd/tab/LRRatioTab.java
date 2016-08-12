@@ -57,18 +57,6 @@ public class LRRatioTab extends Fragment  {
      * initView
      */
     private void initView() {
-        ViewGroup.LayoutParams layoutParams;
-
-        leftRatio = (Button)view.findViewById(R.id.leftRatio);
-        layoutParams = leftRatio.getLayoutParams();
-        layoutParams.height = 0;
-        leftRatio.setLayoutParams(layoutParams);
-
-        rightRatio = (Button)view.findViewById(R.id.rightRatio);
-        layoutParams = rightRatio.getLayoutParams();
-        layoutParams.height = 0;
-        rightRatio.setLayoutParams(layoutParams);
-
         lrTab = (RelativeLayout)view.findViewById(R.id.lrTab);
         lrTab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -106,44 +94,13 @@ public class LRRatioTab extends Fragment  {
      * update
      */
     public void update() {
-        ViewGroup.LayoutParams layoutParams;
-
-        String leftText;
-        String rightText;
-
         if( isAvg ) {
-            leftText = "LEFT(avg)\n" + sensor.getAccumulatedLeftRatio();
-            rightText = "RIGHT(avg)\n" + sensor.getAccumulatedRightRatio();
-
-            layoutParams = leftRatio.getLayoutParams();
-            layoutParams.height = sensor.getAccumulatedLeftRatio() * 10;
-            leftRatio.setLayoutParams(layoutParams);
-
-            layoutParams = rightRatio.getLayoutParams();
-            layoutParams.height = sensor.getAccumulatedRightRatio() * 10;
-            rightRatio.setLayoutParams(layoutParams);
-
             lrView.setPercentage(sensor.getAccumulatedLeftRatio());
             avgText.setVisibility(View.VISIBLE);
         }
         else {
-            leftText = "LEFT\n" + sensor.getLeftRatio();
-            rightText = "RIGHT\n" + sensor.getRightRatio();
-
-            layoutParams = leftRatio.getLayoutParams();
-            layoutParams.height = sensor.getLeftRatio() * 10;
-            leftRatio.setLayoutParams(layoutParams);
-
-            layoutParams = rightRatio.getLayoutParams();
-            layoutParams.height = sensor.getRightRatio() * 10;
-            rightRatio.setLayoutParams(layoutParams);
-
             lrView.setPercentage(sensor.getLeftRatio());
             avgText.setVisibility(View.INVISIBLE);
         }
-
-
-        leftRatio.setText(leftText);
-        rightRatio.setText(rightText);
     }
 }
