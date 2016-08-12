@@ -57,8 +57,8 @@ public class MainActivity extends AppCompatActivity {
     ViewPager pager;
     ViewPagerAdapter adapter;
     SlidingTabLayout tabs;
-    CharSequence Titles[] = {"DASH", "L/R", "Q/H", "L/R/Q/H"};
-    int numOfTabs = 4;
+    CharSequence Titles[] = {"DASH", "Leg", "L/R", "Q/H", "L/R/Q/H"};
+    int numOfTabs = Titles.length;
 
     private ServiceHandler handler;
 
@@ -137,6 +137,8 @@ public class MainActivity extends AppCompatActivity {
         stopItem.setVisible(true);
 
         sendSignal(START);
+
+        adapter.start();
     }
 
     /**
@@ -147,6 +149,8 @@ public class MainActivity extends AppCompatActivity {
         pauseItem.setVisible(false);
 
         sendSignal(PAUSE);
+
+        adapter.pause();
     }
 
     /**
@@ -159,7 +163,7 @@ public class MainActivity extends AppCompatActivity {
 
         sendSignal(STOP);
 
-        adapter.showReportDialog();
+        adapter.stop();
     }
 
     /**
@@ -176,7 +180,8 @@ public class MainActivity extends AppCompatActivity {
                     sendData("P");
                 break;
             case STOP:
-                sendData("E");
+                for (int i = 0; i < 50; i++)
+                    sendData("E");
                 break;
         }
     }
@@ -616,6 +621,14 @@ public class MainActivity extends AppCompatActivity {
             catch(Exception e)  {
                 e.printStackTrace();
             }
+        }
+
+        public int getLeftQuadsUp() {
+            return leftQuadsUp;
+        }
+
+        public int getRightQuadsUp()    {
+            return rightQuadsUp;
         }
 
         public int getCalory() {

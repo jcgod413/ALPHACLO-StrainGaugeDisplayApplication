@@ -30,7 +30,7 @@ public class MainTab extends Fragment {
 
     MainActivity.Sensor sensor;
 
-    MainInfo info;
+    public MainInfo info;
 
     ProgressDialog alertDialog;
 
@@ -154,7 +154,7 @@ public class MainTab extends Fragment {
         dialog.show();
     }
 
-    class MainInfo  {
+    public class MainInfo  {
         Chronometer chronometer;
         TextView distance;
         TextView calory;
@@ -218,6 +218,8 @@ public class MainTab extends Fragment {
 
             chronometer.stop();
             chronometer.setBase(SystemClock.elapsedRealtime());
+
+            showReportDialog();
         }
     }
 }

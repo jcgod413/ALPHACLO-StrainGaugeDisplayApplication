@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 
 import jcgod.sgd.activity.MainActivity;
 import jcgod.sgd.tab.LRRatioTab;
+import jcgod.sgd.tab.LegTab;
 import jcgod.sgd.tab.MainTab;
 import jcgod.sgd.tab.QHRatioTab;
 import jcgod.sgd.tab.AllRatioTab;
@@ -26,6 +27,7 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
     MainTab mainTab;
     QHRatioTab QHTab;
     AllRatioTab allRatioTab;
+    LegTab legTab;
 
     // Build a Constructor and assign the passed Values to appropriate values in the class
     public ViewPagerAdapter(FragmentManager fm, CharSequence mTitles[], int mNumbOfTabsumb, Handler handler, MainActivity.Sensor sensor) {
@@ -63,6 +65,11 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
             allRatioTab.setHandler(handler);
             allRatioTab.setSensor(sensor);
         }
+        if( legTab == null ) {
+            legTab = new LegTab();
+            legTab.setHanlder(handler);
+            legTab.setSensor(sensor);
+        }
     }
 
     //This method return the fragment for the every position in the View Pager
@@ -72,9 +79,11 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
         switch( position )  {
             case 0:    // if the position is 0 we are returning the First tab
                 return mainTab;
-            case 1:    // As we are having 2 tabs if the position is now 0 it must be 1 so we are returning second tab
+            case 1:
+                return legTab;
+            case 2:    // As we are having 2 tabs if the position is now 0 it must be 1 so we are returning second tab
                 return LRTab;
-            case 2:
+            case 3:
                 return QHTab;
             default:
                 return allRatioTab;
@@ -98,12 +107,18 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
         LRTab.update();
         QHTab.update();
         allRatioTab.update();
+        legTab.update();
     }
 
-    /**
-     * showReportDialog
-     */
-    public void showReportDialog()  {
-        mainTab.showReportDialog();
+    public void start() {
+        mainTab.info.start();
+    }
+
+    public void pause() {
+        mainTab.info.pause();
+    }
+
+    public void stop()  {
+        mainTab.info.stop();
     }
 }
