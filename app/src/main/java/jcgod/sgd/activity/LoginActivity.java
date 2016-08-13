@@ -125,6 +125,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long l_position) {
                 editor.putString("uid", userMap.get(adapter.getItem(position)));
+                editor.commit();
 
                 startActivity(new Intent(LoginActivity.this, MainActivity.class));
             }
@@ -195,6 +196,9 @@ public class LoginActivity extends AppCompatActivity {
         alert.show();
     }
 
+    /**
+     * getUserList
+     */
     private void getUserList()  {
         String url = getText(R.string.server_url) + "user";
         IHttpRecvCallback cb = new IHttpRecvCallback() {
@@ -220,7 +224,7 @@ public class LoginActivity extends AppCompatActivity {
                     for(int i=0; i<jsonArray.length(); i++) {
                         JSONObject obj = jsonArray.getJSONObject(i);
 
-                        userMap.put(obj.getString("uid"), obj.getString("name"));
+                        userMap.put(obj.getString("name"), obj.getString("uid"));
                         adapter.add(obj.getString("name"));
                     }
 
