@@ -3,10 +3,13 @@ package jcgod.sgd.activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -15,7 +18,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import jcgod.sgd.Network.HttpTask;
+import jcgod.sgd.Network.IHttpRecvCallback;
 import jcgod.sgd.R;
 
 /**
@@ -24,6 +36,13 @@ import jcgod.sgd.R;
 public class LoginActivity extends AppCompatActivity {
 
     private ArrayAdapter<String> adapter;
+
+    final String TAG = "LoginActivity";
+
+    HashMap<String, String> userMap = new HashMap<>();
+
+    SharedPreferences sharedPref;
+    SharedPreferences.Editor editor;
 
     /**
      * onCreate
@@ -46,8 +65,17 @@ public class LoginActivity extends AppCompatActivity {
         ViewGroup root = (ViewGroup) findViewById(android.R.id.content);
         setGlobalFont(root);
 
+        initSharedPref();
         initToolbar();
         initComponents();
+    }
+
+    /**
+     * initSharedPref
+     */
+    void initSharedPref()   {
+        sharedPref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        editor = sharedPref.edit();
     }
 
     /**
@@ -90,13 +118,14 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
-        adapter.add("Jaecheol Shin");
 
         ListView userList = (ListView)findViewById(R.id.userList);
         userList.setAdapter(adapter);
         userList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long l_position) {
+                editor.putString("uid", userMap.get(adapter.getItem(position)));
+
                 startActivity(new Intent(LoginActivity.this, MainActivity.class));
             }
         });
@@ -107,6 +136,8 @@ public class LoginActivity extends AppCompatActivity {
                 return true;
             }
         });
+
+        getUserList();
     }
 
     /**
@@ -162,5 +193,42 @@ public class LoginActivity extends AppCompatActivity {
         // Title for AlertDialog
         alert.setTitle("User remove");
         alert.show();
+    }
+
+    private void getUserList()  {
+        String url = getText(R.string.server_url) + "user";
+        IHttpRecvCallback cb = new IHttpRecvCallback() {
+            @Override
+            public void onRecv(String result) {
+                // 응답 메시지 수신
+                if( result == null )
+                    return;
+
+                Log.d(TAG, result);
+
+                try {
+                    JSONObject json = new JSONObject(result);
+                    String result_code = json.get("result_code").toString();
+                    if( "-1".equals(result_code) )  {
+                        Toast.makeText(getApplicationContext(),
+                                json.get("result_message").toString(),
+                                Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+
+                    JSONArray jsonArray = json.getJSONArray("users");
+                    for(int i=0; i<jsonArray.length(); i++) {
+                        JSONObject obj = jsonArray.getJSONObject(i);
+
+                        userMap.put(obj.getString("uid"), obj.getString("name"));
+                        adapter.add(obj.getString("name"));
+                    }
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+        new HttpTask(cb).execute("GET", url);
     }
 }
