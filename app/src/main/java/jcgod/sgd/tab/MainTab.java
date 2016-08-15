@@ -137,8 +137,8 @@ public class MainTab extends Fragment {
         String contents = "Time : " + info.chronometer.getText() + "\n"
                 + "Distance : " + info.distance.getText() + "\n"
                 + "Calory : " + info.calory.getText() + "\n"
-                + "L/R (avg) : " + info.LRRatio.getText() + "\n"
-                + "Q/H (avg) : " + info.QHRatio.getText();
+                + "L/R (avg) : " + info.LRRatio.getText() + "\n";
+//                + "Q/H (avg) : " + info.QHRatio.getText();
 
         AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
         builder.setTitle(title);

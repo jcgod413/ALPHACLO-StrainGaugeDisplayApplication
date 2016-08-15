@@ -94,6 +94,14 @@ public class LegTab extends Fragment {
      */
     public void update() {
         if( isAvg ) {
+            int leftRatio = sensor.getAccumulatedLeftRatio();
+            int rightRatio = sensor.getAccumulatedRightRatio();
+            float leftAlpha = leftRatio / 100f;
+            float rightAlpha = rightRatio / 100f;
+
+            leftImage.setAlpha(leftAlpha);
+            rightImage.setAlpha(rightAlpha);
+            /*
             int leftRatio = sensor.getAccumulatedLeftRatio() * 2;
             int leftColor = Color.argb(255, 255, 255 - leftRatio, 255 - leftRatio);
             leftImage.setBackgroundTintList(ColorStateList.valueOf(leftColor));
@@ -101,10 +109,19 @@ public class LegTab extends Fragment {
             int rightRatio = sensor.getAccumulatedRightRatio() * 2;
             int rightColor = Color.argb(255, 255, 255 - rightRatio, 255 - rightRatio);
             rightImage.setBackgroundTintList(ColorStateList.valueOf(rightColor));
-
+            */
             avgText.setVisibility(View.VISIBLE);
+
         }
         else {
+            int leftRatio = sensor.getLeftRatio();
+            int rightRatio = sensor.getRightRatio();
+            float leftAlpha = leftRatio / 100f;
+            float rightAlpha = rightRatio / 100f;
+
+            leftImage.setAlpha(leftAlpha);
+            rightImage.setAlpha(rightAlpha);
+            /*
             int leftRatio = sensor.getLeftRatio() * 2;
             int leftColor = Color.argb(255, 255, 255 - leftRatio, 255 - leftRatio);
             leftImage.setBackgroundTintList(ColorStateList.valueOf(leftColor));
@@ -112,7 +129,7 @@ public class LegTab extends Fragment {
             int rightRatio = sensor.getRightRatio() * 2;
             int rightColor = Color.argb(255, 255, 255 - rightRatio, 255 - rightRatio);
             rightImage.setBackgroundTintList(ColorStateList.valueOf(rightColor));
-
+            */
             avgText.setVisibility(View.INVISIBLE);
         }
     }
