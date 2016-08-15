@@ -57,7 +57,8 @@ public class MainActivity extends AppCompatActivity {
     ViewPager pager;
     ViewPagerAdapter adapter;
     SlidingTabLayout tabs;
-    CharSequence Titles[] = {"DASH", "Leg", "L/R", "Q/H", "L/R/Q/H"};
+//    CharSequence Titles[] = {"DASH", "Leg", "L/R", "Q/H", "L/R/Q/H"};
+    CharSequence Titles[] = {"DASH", "Leg", "L/R"};
     int numOfTabs = Titles.length;
 
     private ServiceHandler handler;
@@ -132,11 +133,11 @@ public class MainActivity extends AppCompatActivity {
      * start
      */
     private void start()    {
+        sendSignal(START);
+
         playItem.setVisible(false);
         pauseItem.setVisible(true);
         stopItem.setVisible(true);
-
-        sendSignal(START);
 
         adapter.start();
     }
@@ -145,10 +146,10 @@ public class MainActivity extends AppCompatActivity {
      * pause
      */
     private void pause()    {
+        sendSignal(PAUSE);
+
         playItem.setVisible(true);
         pauseItem.setVisible(false);
-
-        sendSignal(PAUSE);
 
         adapter.pause();
     }
@@ -157,11 +158,11 @@ public class MainActivity extends AppCompatActivity {
      * stop
      */
     private void stop() {
+        sendSignal(STOP);
+
         playItem.setVisible(true);
         pauseItem.setVisible(false);
         stopItem.setVisible(false);
-
-        sendSignal(STOP);
 
         adapter.stop();
     }

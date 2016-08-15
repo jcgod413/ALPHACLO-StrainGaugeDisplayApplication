@@ -55,16 +55,16 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
             mainTab.setHandler(handler);
             mainTab.setSensor(sensor);
         }
-        if( QHTab == null )  {
-            QHTab = new QHRatioTab();
-            QHTab.setHandler(handler);
-            QHTab.setSensor(sensor);
-        }
-        if( allRatioTab == null )  {
-            allRatioTab = new AllRatioTab();
-            allRatioTab.setHandler(handler);
-            allRatioTab.setSensor(sensor);
-        }
+//        if( QHTab == null )  {
+//            QHTab = new QHRatioTab();
+//            QHTab.setHandler(handler);
+//            QHTab.setSensor(sensor);
+//        }
+//        if( allRatioTab == null )  {
+//            allRatioTab = new AllRatioTab();
+//            allRatioTab.setHandler(handler);
+//            allRatioTab.setSensor(sensor);
+//        }
         if( legTab == null ) {
             legTab = new LegTab();
             legTab.setHanlder(handler);
@@ -76,19 +76,21 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
     @Override
     public Fragment getItem(int position) {
 
-        switch( position )  {
+        switch (position) {
             case 0:    // if the position is 0 we are returning the First tab
                 return mainTab;
             case 1:
                 return legTab;
-            case 2:    // As we are having 2 tabs if the position is now 0 it must be 1 so we are returning second tab
+            default:    // As we are having 2 tabs if the position is now 0 it must be 1 so we are returning second tab
                 return LRTab;
-            case 3:
-                return QHTab;
-            default:
-                return allRatioTab;
         }
     }
+//            case 3:
+//                return QHTab;
+//            default:
+//                return allRatioTab;
+//        }
+//    }
 
     // This method return the titles for the Tabs in the Tab Strip
     @Override
@@ -105,8 +107,8 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
     public void receivePacket(String packet)    {
         mainTab.update(packet);
         LRTab.update();
-        QHTab.update();
-        allRatioTab.update();
+//        QHTab.update();
+//        allRatioTab.update();
         legTab.update();
     }
 

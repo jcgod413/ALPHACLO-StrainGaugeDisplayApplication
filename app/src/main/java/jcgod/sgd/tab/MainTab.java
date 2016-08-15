@@ -101,6 +101,10 @@ public class MainTab extends Fragment {
      * update
      */
     public void update(String packet)   {
+        if( !info.running ) {
+            return;
+        }
+
         info.packet.setText(packet);
 
         String lr;
