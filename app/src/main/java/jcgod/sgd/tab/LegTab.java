@@ -33,8 +33,13 @@ public class LegTab extends Fragment {
 
     TextView avgText;
 
-    ImageView leftImage;
-    ImageView rightImage;
+    ImageView leftMuscle;
+    ImageView rightMuscle;
+
+    TextView leftText;
+    TextView rightText;
+
+    private boolean running;
 
     /**
      * onCreateView
@@ -66,11 +71,14 @@ public class LegTab extends Fragment {
             }
         });
 
-        leftImage = (ImageView)view.findViewById(R.id.leftImage);
-        rightImage = (ImageView)view.findViewById(R.id.rightImage);
+        leftMuscle = (ImageView)view.findViewById(R.id.leftMuscle);
+        rightMuscle = (ImageView)view.findViewById(R.id.rightMuscle);
 
         avgText = (TextView)view.findViewById(R.id.legAvgText);
         avgText.setVisibility(View.INVISIBLE);
+
+        leftText = (TextView)view.findViewById(R.id.leftText);
+        rightText = (TextView)view.findViewById(R.id.rightText);
     }
 
     /**
@@ -90,37 +98,57 @@ public class LegTab extends Fragment {
     }
 
     /**
+     * start
+     */
+    public void start() {
+        running = true;
+    }
+
+    /**
+     * pause
+     */
+    public void pause() {
+        running = false;
+    }
+
+    /**
+     * stop
+     */
+    public void stop()  {
+        running = false;
+    }
+
+    /**
      * update
      */
     public void update() {
-        if( isAvg ) {
-            int leftRatio = sensor.getAccumulatedLeftRatio();
-            int rightRatio = sensor.getAccumulatedRightRatio();
-            float leftAlpha = leftRatio / 100f;
-            float rightAlpha = rightRatio / 100f;
+        if( running )   {
+            if( isAvg ) {
+                int leftRatio = (int)(sensor.getAccumulatedLeftAverage() / 10.24D);
+                int rightRatio = (int)(sensor.getAccumulatedRightAverage() / 10.24D);
+                float leftAlpha = leftRatio / 100f;
+                float rightAlpha = rightRatio / 100f;
 
-            leftImage.setAlpha(leftAlpha);
-            rightImage.setAlpha(rightAlpha);
-            /*
-            int leftRatio = sensor.getAccumulatedLeftRatio() * 2;
-            int leftColor = Color.argb(255, 255, 255 - leftRatio, 255 - leftRatio);
-            leftImage.setBackgroundTintList(ColorStateList.valueOf(leftColor));
+                leftMuscle.setAlpha(leftAlpha);
+                rightMuscle.setAlpha(rightAlpha);
 
-            int rightRatio = sensor.getAccumulatedRightRatio() * 2;
-            int rightColor = Color.argb(255, 255, 255 - rightRatio, 255 - rightRatio);
-            rightImage.setBackgroundTintList(ColorStateList.valueOf(rightColor));
-            */
-            avgText.setVisibility(View.VISIBLE);
+                leftText.setText(String.valueOf(leftRatio));
+                rightText.setText(String.valueOf(rightRatio));
 
-        }
-        else {
-            int leftRatio = sensor.getLeftRatio();
-            int rightRatio = sensor.getRightRatio();
-            float leftAlpha = leftRatio / 100f;
-            float rightAlpha = rightRatio / 100f;
+                avgText.setVisibility(View.VISIBLE);
+            }
+            else {
+                int leftRatio = (int)(sensor.getLeftAverage() / 10.24D);
+                int rightRatio = (int)(sensor.getRightAverage() / 10.24D);
+                float leftAlpha = leftRatio / 100f;
+                float rightAlpha = rightRatio / 100f;
 
-            leftImage.setAlpha(leftAlpha);
-            rightImage.setAlpha(rightAlpha);
+                leftMuscle.setAlpha(leftAlpha);
+                rightMuscle.setAlpha(rightAlpha);
+
+                leftText.setText(String.valueOf(leftRatio));
+                rightText.setText(String.valueOf(rightRatio));
+
             /*
             int leftRatio = sensor.getLeftRatio() * 2;
             int leftColor = Color.argb(255, 255, 255 - leftRatio, 255 - leftRatio);
@@ -130,7 +158,8 @@ public class LegTab extends Fragment {
             int rightColor = Color.argb(255, 255, 255 - rightRatio, 255 - rightRatio);
             rightImage.setBackgroundTintList(ColorStateList.valueOf(rightColor));
             */
-            avgText.setVisibility(View.INVISIBLE);
+                avgText.setVisibility(View.INVISIBLE);
+            }
         }
     }
 }

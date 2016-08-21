@@ -37,6 +37,11 @@ public class LRRatioTab extends Fragment  {
 
     TextView avgText;
 
+    TextView leftText;
+    TextView rightText;
+
+    private boolean running;
+
     /**
      * onCreateView
      * @param inflater
@@ -69,9 +74,13 @@ public class LRRatioTab extends Fragment  {
 
         lrView = (PieView)view.findViewById(R.id.lrView);
         lrView.setMode(PieView.horizontal);
+        lrView.setPercentage(50);
 
         avgText = (TextView)view.findViewById(R.id.lrAvgText);
         avgText.setVisibility(View.INVISIBLE);
+
+        leftText = (TextView)view.findViewById(R.id.leftText);
+        rightText = (TextView)view.findViewById(R.id.rightText);
     }
 
     /**
@@ -91,16 +100,57 @@ public class LRRatioTab extends Fragment  {
     }
 
     /**
+     * start
+     */
+    public void start() {
+        running = true;
+    }
+
+    /**
+     * pause
+     */
+    public void pause() {
+        running = false;
+    }
+
+    /**
+     * stop
+     */
+    public void stop()  {
+        running = false;
+    }
+
+    /**
      * update
      */
     public void update() {
-        if( isAvg ) {
-            lrView.setPercentage(sensor.getAccumulatedLeftRatio());
-            avgText.setVisibility(View.VISIBLE);
-        }
-        else {
-            lrView.setPercentage(sensor.getLeftRatio());
-            avgText.setVisibility(View.INVISIBLE);
+        if( running )   {
+            if( isAvg ) {
+//            int left = (int)(sensor.getAccumulatedLeftAverage() / 10.24D);
+//            int right = (int)(sensor.getAccumulatedRightAverage() / 10.24D);
+
+                lrView.setPercentage(sensor.getAccumulatedLeftRatio());
+
+//            leftText.setText(String.valueOf(left));
+//            rightText.setText(String.valueOf(right));
+                leftText.setText(String.valueOf(sensor.getAccumulatedLeftRatio()));
+                rightText.setText(String.valueOf(100-sensor.getAccumulatedLeftRatio()));
+
+                avgText.setVisibility(View.VISIBLE);
+            }
+            else {
+//            int left = (int)(sensor.getLeftAverage() / 10.24D);
+//            int right = (int)(sensor.getRightAverage() / 10.24D);
+
+                lrView.setPercentage(sensor.getLeftRatio());
+
+//            leftText.setText(String.valueOf(left));
+//            rightText.setText(String.valueOf(right));
+                leftText.setText(String.valueOf(sensor.getLeftRatio()));
+                rightText.setText(String.valueOf(100-sensor.getLeftRatio()));
+
+                avgText.setVisibility(View.INVISIBLE);
+            }
         }
     }
 }

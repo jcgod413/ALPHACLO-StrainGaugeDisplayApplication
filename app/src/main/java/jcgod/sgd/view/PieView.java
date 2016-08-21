@@ -1,9 +1,12 @@
 package jcgod.sgd.view;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Rect;
 import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.view.View;
@@ -29,6 +32,8 @@ public class PieView extends View {
     public static int vertical = 1;
     public static int horizontal = 2;
 
+    Bitmap insideBitmap;
+
     public PieView(Context context) {
         super(context);
         initView();
@@ -47,21 +52,23 @@ public class PieView extends View {
         frontPaint.setColor(getContext().getResources().getColor(R.color.colorAccent));
         frontPaint.setAntiAlias(true);
         frontPaint.setStyle(Paint.Style.FILL);
-        frontPaint.setTextSize(64);
+        frontPaint.setTextSize(50);
 
         backPaint = new Paint();
         backPaint.setColor(getContext().getResources().getColor(R.color.colorPrimary));
         backPaint.setAntiAlias(true);
         backPaint.setStyle(Paint.Style.FILL);
-        backPaint.setTextSize(64);
+        backPaint.setTextSize(50);
 
         innerPaint = new Paint();
-        innerPaint.setColor(0xffffffff);
+        innerPaint.setColor(0xff404040);
         innerPaint.setAntiAlias(true);
         innerPaint.setStyle(Paint.Style.FILL);
 
         outterRect = new RectF();
         innerRect = new RectF();
+
+        insideBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.inside_view_min);
     }
 
     @Override
@@ -83,18 +90,19 @@ public class PieView extends View {
             canvas.drawArc(outterRect, 90f - (1.8f * percentage), 3.6f * percentage, true, frontPaint);
             backPaint.setColor(Color.WHITE);
             frontPaint.setColor(Color.WHITE);
-            if( percentage == 0 )   {
-                canvas.drawText(String.valueOf(100 - percentage), width / 2f / 10f * 8f, 80f, backPaint);
-                canvas.drawText(String.valueOf(percentage), width / 2f / 11f * 10f, width - 50f, frontPaint);
-            }
-            else if( percentage == 100 )    {
-                canvas.drawText(String.valueOf(100 - percentage), width / 2f / 11f * 10f, 80f, backPaint);
-                canvas.drawText(String.valueOf(percentage), width / 2f / 10f * 8f, width - 50f, frontPaint);
-            }
-            else {
-                canvas.drawText(String.valueOf(100 - percentage), width / 2f / 9f * 8f, 80f, backPaint);
-                canvas.drawText(String.valueOf(percentage), width / 2f / 10f * 9f, width - 50f, frontPaint);
-            }
+
+//            if( percentage == 0 )   {
+//                canvas.drawText(String.valueOf(100 - percentage), width / 2f / 10f * 8f, 80f, backPaint);
+//                canvas.drawText(String.valueOf(percentage), width / 2f / 11f * 10f, width - 50f, frontPaint);
+//            }
+//            else if( percentage == 100 )    {
+//                canvas.drawText(String.valueOf(100 - percentage), width / 2f / 11f * 10f, 80f, backPaint);
+//                canvas.drawText(String.valueOf(percentage), width / 2f / 10f * 8f, width - 50f, frontPaint);
+//            }
+//            else {
+//                canvas.drawText(String.valueOf(100 - percentage), width / 2f / 9f * 8f, 80f, backPaint);
+//                canvas.drawText(String.valueOf(percentage), width / 2f / 10f * 9f, width - 50f, frontPaint);
+//            }
             backPaint.setColor(getContext().getResources().getColor(R.color.colorPrimary));
             frontPaint.setColor(getContext().getResources().getColor(R.color.colorAccent));
         }
@@ -102,12 +110,15 @@ public class PieView extends View {
             canvas.drawArc(outterRect, 180f - (1.8f * percentage), 3.6f * percentage, true, frontPaint);
             backPaint.setColor(Color.WHITE);
             frontPaint.setColor(Color.WHITE);
-            canvas.drawText(String.valueOf(percentage), 50f, width / 2f / 14f * 15f, backPaint);
-            canvas.drawText(String.valueOf(100-percentage), width-110f, width / 2f / 14f * 15f, frontPaint);
+            canvas.drawText("LEFT", 10, width / 2, backPaint);
+            canvas.drawText("RIGHT", width-150f, width/2, frontPaint);
+//            canvas.drawText(String.valueOf(percentage), 50f, width / 2f / 14f * 15f, backPaint);
+//            canvas.drawText(String.valueOf(100-percentage), width-110f, width / 2f / 14f * 15f, frontPaint);
             backPaint.setColor(getContext().getResources().getColor(R.color.colorPrimary));
             frontPaint.setColor(getContext().getResources().getColor(R.color.colorAccent));
         }
-        canvas.drawArc(innerRect, -90, 360, true, innerPaint);
+
+        canvas.drawBitmap(insideBitmap, null, innerRect, innerPaint);
     }
 
     public void setPercentage(int percentage) {

@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/mainTab"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_tab_vertical_min">
 
     <TextView
         android:id="@+id/packet"
@@ -11,7 +12,8 @@
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         android:textSize="20sp"
-        android:visibility="invisible"/>
+        android:textColor="@android:color/white"
+        android:visibility="visible"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -36,6 +38,7 @@
                     android:text="Time"
                     android:textSize="20sp"
                     android:textStyle="bold"
+                    android:textColor="@android:color/darker_gray"
                     android:textAlignment="center"/>
 
                 <Chronometer
@@ -45,7 +48,7 @@
                     android:gravity="center"
                     android:textSize="36sp"
                     android:textStyle="bold"
-                    android:textColor="@android:color/tertiary_text_dark"
+                    android:textColor="@android:color/white"
                     android:text="00:00" />
 
             </LinearLayout>
@@ -67,6 +70,7 @@
                     android:text="Distance"
                     android:textSize="20sp"
                     android:textStyle="bold"
+                    android:textColor="@android:color/darker_gray"
                     android:textAlignment="center"/>
 
                 <TextView
@@ -76,6 +80,7 @@
                     android:textStyle="bold"
                     android:textSize="36sp"
                     android:textAlignment="center"
+                    android:textColor="@android:color/white"
                     android:id="@+id/main_distance" />
 
             </LinearLayout>
@@ -102,6 +107,7 @@
                 android:text="Calory"
                 android:textSize="20sp"
                 android:textStyle="bold"
+                android:textColor="@android:color/darker_gray"
                 android:textAlignment="center"/>
 
             <TextView
@@ -110,6 +116,7 @@
                 android:text="0"
                 android:textStyle="bold"
                 android:textSize="64sp"
+                android:textColor="@android:color/white"
                 android:textAlignment="center"
                 android:id="@+id/main_calory" />
 
@@ -142,6 +149,7 @@
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:textAlignment="center"
+                    android:textColor="@android:color/darker_gray"
                     android:id="@+id/main_lrText" />
 
                 <TextView
@@ -151,6 +159,7 @@
                     android:textSize="36sp"
                     android:textStyle="bold"
                     android:textAlignment="center"
+                    android:textColor="@android:color/white"
                     android:id="@+id/main_lr" />
 
             </LinearLayout>
@@ -173,6 +182,7 @@
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:textAlignment="center"
+                    android:textColor="@android:color/darker_gray"
                     android:id="@+id/main_qhText" />
 
                 <TextView
@@ -182,6 +192,7 @@
                     android:textStyle="bold"
                     android:textSize="36sp"
                     android:textAlignment="center"
+                    android:textColor="@android:color/white"
                     android:id="@+id/main_qh" />
 
             </LinearLayout>

@@ -114,13 +114,19 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
     public void start() {
         mainTab.info.start();
+        legTab.start();
+        LRTab.start();
     }
 
     public void pause() {
         mainTab.info.pause();
+        legTab.pause();
+        LRTab.pause();
     }
 
     public void stop()  {
         mainTab.info.stop();
+        legTab.stop();
+        LRTab.stop();
     }
 }

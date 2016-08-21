@@ -2,60 +2,158 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/legTab">
+    android:id="@+id/legTab"
+    android:background="@drawable/bg_tab_vertical_min">
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:paddingBottom="26dp">-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/leftImage_back"-->
+            <!--android:layout_width="100dp"-->
+            <!--android:layout_height="280dp"-->
+            <!--android:background="@drawable/leftleg_back" />-->
+        <!--<ImageView-->
+            <!--android:id="@+id/rightImage_back"-->
+            <!--android:layout_width="100dp"-->
+            <!--android:layout_height="280dp"-->
+            <!--android:background="@drawable/rightleg_back" />-->
+    <!--</LinearLayout>-->
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:orientation="vertical">-->
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:layout_centerInParent="true">-->
+
+            <!--<ImageView-->
+                <!--android:id="@+id/leftImage"-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="280dp"-->
+                <!--android:background="@drawable/leftleg"-->
+                <!--android:backgroundTintMode="multiply"/>-->
+            <!--<ImageView-->
+                <!--android:id="@+id/rightImage"-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="280dp"-->
+                <!--android:background="@drawable/rightleg"-->
+                <!--android:backgroundTintMode="multiply" />-->
+        <!--</LinearLayout>-->
+
+
+    <!--</LinearLayout>-->
+
+    <RelativeLayout
+        android:layout_width="250dp"
+        android:layout_height="350dp"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/relativeLayout">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/leg"/>
+
+        <ImageView
+            android:id="@+id/leftMuscle"
+            android:layout_width="70dp"
+            android:layout_height="120dp"
+            android:src="@drawable/leftmuscle"
+            android:layout_marginStart="61dp"
+            android:layout_marginTop="38dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"/>
+
+        <ImageView
+            android:id="@+id/rightMuscle"
+            android:layout_width="70dp"
+            android:layout_height="120dp"
+            android:src="@drawable/rightmuscle"
+            android:layout_alignTop="@+id/leftMuscle"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"/>
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/legAvgText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="(avg)"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:layout_below="@+id/relativeLayout"
+        android:layout_alignParentStart="true" />
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_centerInParent="true"
-        android:paddingBottom="26dp">
-
-        <ImageView
-            android:id="@+id/leftImage_back"
-            android:layout_width="100dp"
-            android:layout_height="280dp"
-            android:background="@drawable/leftleg_back" />
-        <ImageView
-            android:id="@+id/rightImage_back"
-            android:layout_width="100dp"
-            android:layout_height="280dp"
-            android:background="@drawable/rightleg_back" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:orientation="vertical">
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:gravity="center">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_centerInParent="true">
-
-            <ImageView
-                android:id="@+id/leftImage"
-                android:layout_width="100dp"
-                android:layout_height="280dp"
-                android:background="@drawable/leftleg"
-                android:backgroundTintMode="multiply"/>
-            <ImageView
-                android:id="@+id/rightImage"
-                android:layout_width="100dp"
-                android:layout_height="280dp"
-                android:background="@drawable/rightleg"
-                android:backgroundTintMode="multiply" />
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:text="LEFT"/>
+            <TextView
+                android:id="@+id/leftText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:textSize="48sp"
+                android:textAlignment="center"
+                android:text="0"/>
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/legAvgText"
-            android:layout_width="match_parent"
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:background="@android:color/darker_gray"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:text="(avg)"
-            android:textSize="24sp"/>
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:text="RIGHT"/>
+            <TextView
+                android:id="@+id/rightText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:textSize="48sp"
+                android:textAlignment="center"
+                android:text="0"/>
+        </LinearLayout>
     </LinearLayout>
 
 </RelativeLayout>

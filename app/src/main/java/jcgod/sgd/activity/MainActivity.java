@@ -660,7 +660,7 @@ public class MainActivity extends AppCompatActivity {
             return (acc_leftHamsDown + leftHamsUp + acc_leftQuadsDown + acc_leftQuadsUp) / 4D;
         }
 
-        public double getAccumualtedRightAverage() {
+        public double getAccumulatedRightAverage() {
             return (acc_rightHamsDown + acc_rightHamsUp + acc_rightQuadsDown + acc_rightQuadsUp) / 4D;
         }
 
@@ -738,14 +738,14 @@ public class MainActivity extends AppCompatActivity {
 
         public int getAccumulatedLeftRatio()    {
             double left = getAccumulatedLeftAverage();
-            double right = getAccumualtedRightAverage();
+            double right = getAccumulatedRightAverage();
 
             return (int)Math.round(left / (left+right) * 100.0d);
         }
 
         public int getAccumulatedRightRatio()   {
             double left = getAccumulatedLeftAverage();
-            double right = getAccumualtedRightAverage();
+            double right = getAccumulatedRightAverage();
 
             return (int)Math.round(right / (left+right) * 100.0d);
         }
