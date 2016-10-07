@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/layout_lr"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <alphaclo.view.PercentView
+        android:id="@+id/percentView"
+        android:padding="10dp"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp">
+        <TextView
+            android:textSize="54sp"
+            android:textColor="@color/material_grey_100"
+            android:id="@+id/maText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0" />
+        <TextView
+            android:textSize="20sp"
+            android:textColor="@color/material_grey_300"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MA/min" />
+    </LinearLayout>
+</RelativeLayout>

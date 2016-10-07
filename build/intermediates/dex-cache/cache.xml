@@ -2,11 +2,137 @@
 <items version="2" >
 
     <item
-        jar="/Users/Jaecheol/StrainGaugeDisplay-App/app/libs/httpclientandroidlib-1.2.0.jar"
+        jar="/Users/Jaecheol/Desktop/materiallogindemo-master/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.0/jars/classes.jar"
         jumboMode="false"
-        revision="23.0.1"
+        revision="22.0.1"
+        sha1="f9b41622897665678d31d78e57a361cb0cebcb0d">
+        <dex dex="/Users/Jaecheol/Desktop/materiallogindemo-master/app/build/intermediates/pre-dexed/debug/classes-c04cfab59d9453c4370d64f048bb47f5925e6d8c.jar" />
+    </item>
+    <item
+        jar="/Users/Jaecheol/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife/7.0.1/d5d13ea991eab0252e3710e5df3d6a9d4b21d461/butterknife-7.0.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="d5d13ea991eab0252e3710e5df3d6a9d4b21d461">
+        <dex dex="/Users/Jaecheol/Desktop/materiallogindemo-master/app/build/intermediates/pre-dexed/debug/butterknife-7.0.1-d91cce8d6a90a43fe26a94a0a09e4659a19ab3c2.jar" />
+    </item>
+    <item
+        jar="/Users/Jaecheol/Desktop/materiallogindemo-master/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="45f5eda279825ff470e3f51019d374d1ef61e000">
+        <dex dex="/Users/Jaecheol/Desktop/materiallogindemo-master/app/build/intermediates/pre-dexed/debug/classes-c00f1b37c4f0bc7ad59c890a3a43d8d0220b93c8.jar" />
+    </item>
+    <item
+        jar="/Users/Jaecheol/Desktop/materiallogindemo-master/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.0/jars/libs/internal_impl-24.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="60d7b23621d31e6f42f4f76f16af467e57a20cda">
+        <dex dex="/Users/Jaecheol/Desktop/materiallogindemo-master/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.0-6ab728e4cecfd72ed9938f295a49decd820f70eb.jar" />
+    </item>
+    <item
+        jar="/Users/Jaecheol/Desktop/materiallogindemo-master/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="6eb9107eb34d2fe2b020662b7fbbec991dcba846">
+        <dex dex="/Users/Jaecheol/Desktop/materiallogindemo-master/app/build/intermediates/pre-dexed/debug/classes-48962999a3003b15a321ac019eaec35b62d338db.jar" />
+    </item>
+    <item
+        jar="/Users/Jaecheol/Desktop/materiallogindemo-master/app/build/intermediates/exploded-aar/com.android.support/support-v13/24.2.0/jars/libs/internal_impl-24.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1dcb8005f460d87baed0abdc9ec997a58797856e">
+        <dex dex="/Users/Jaecheol/Desktop/materiallogindemo-master/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.0-fa057102865f8b11f7835a86de864d67caabd957.jar" />
+    </item>
+    <item
+        jar="/Users/Jaecheol/Desktop/materiallogindemo-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="/Users/Jaecheol/Desktop/materiallogindemo-master/app/build/intermediates/pre-dexed/debug/classes-6f53337b2c83e40a5c11f7f2d9c94ff40cf94bed.jar" />
+    </item>
+    <item
+        jar="/Users/Jaecheol/Desktop/materiallogindemo-master/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c84e216d9bf618464d6b9564d71d9a656433e7c4">
+        <dex dex="/Users/Jaecheol/Desktop/materiallogindemo-master/app/build/intermediates/pre-dexed/debug/classes-2cfc13b7dcf789725eb0f57e7d0f6e7d0038c0a3.jar" />
+    </item>
+    <item
+        jar="/Users/Jaecheol/Desktop/materiallogindemo-master/app/build/intermediates/exploded-aar/com.android.support/support-v13/24.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="6bf34c4b4fcd3f6913eca652d13c51dbde51c3a4">
+        <dex dex="/Users/Jaecheol/Desktop/materiallogindemo-master/app/build/intermediates/pre-dexed/debug/classes-e528f9b5042f081c4821dd1726c9390c5327e796.jar" />
+    </item>
+    <item
+        jar="/Users/Jaecheol/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.0/support-annotations-24.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="6be858a75633b1f0a2d24cad740db57775cb6871">
+        <dex dex="/Users/Jaecheol/Desktop/materiallogindemo-master/app/build/intermediates/pre-dexed/debug/support-annotations-24.2.0-423a7e6c0f44bfa883182b364a31fd38f2112615.jar" />
+    </item>
+    <item
+        jar="/Users/Jaecheol/Desktop/materiallogindemo-master/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.0/jars/libs/internal_impl-24.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="032a4b53def5e2ceedfc2e793b126c0163cfa1dd">
+        <dex dex="/Users/Jaecheol/Desktop/materiallogindemo-master/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.0-12f14d00896ac6847172ae2316d33d7ffee900e5.jar" />
+    </item>
+    <item
+        jar="/Users/Jaecheol/Desktop/materiallogindemo-master/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.0/jars/libs/internal_impl-24.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="771b3cc0e597b54da25f8086ba73180c59c6bc71">
+        <dex dex="/Users/Jaecheol/Desktop/materiallogindemo-master/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.0-ce9ab3bd1fc9442e6a1a8dd800a384d1bfba3d9f.jar" />
+    </item>
+    <item
+        jar="/Users/Jaecheol/Desktop/materiallogindemo-master/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c755536e5a100d9c76c8ea0b72f76c018f7a9de2">
+        <dex dex="/Users/Jaecheol/Desktop/materiallogindemo-master/app/build/intermediates/pre-dexed/debug/classes-fa68edd13e4786df9a50da659ce2d5e84f21f5c6.jar" />
+    </item>
+    <item
+        jar="/Users/Jaecheol/Desktop/materiallogindemo-master/app/libs/httpclientandroidlib-1.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
         sha1="d884b9ed1234ce24ae00913167760836bf089050">
-        <dex dex="/Users/Jaecheol/StrainGaugeDisplay-App/app/build/intermediates/pre-dexed/debug/httpclientandroidlib-1.2.0-da9c739bc2731a105c21b172399ef05ce09d0bad.jar" />
+        <dex dex="/Users/Jaecheol/Desktop/materiallogindemo-master/app/build/intermediates/pre-dexed/debug/httpclientandroidlib-1.2.0-bcdc7f88382880c8ff6302078c0651fe38f6ae13.jar" />
+    </item>
+    <item
+        jar="/Users/Jaecheol/Desktop/materiallogindemo-master/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.0/jars/libs/internal_impl-24.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="6e02e34594ebe9c0501ffda8dd48497f81b82977">
+        <dex dex="/Users/Jaecheol/Desktop/materiallogindemo-master/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.0-9fc3918dbe1550eeeba8373f986cbd82bddd322d.jar" />
+    </item>
+    <item
+        jar="/Users/Jaecheol/Desktop/materiallogindemo-master/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="d8bd2268fdcbfd52c76ade65d9900cd8def93a44">
+        <dex dex="/Users/Jaecheol/Desktop/materiallogindemo-master/app/build/intermediates/pre-dexed/debug/classes-112b8e0dc46c25500a75ae3dc60c614dc8fd5b7d.jar" />
+    </item>
+    <item
+        jar="/Users/Jaecheol/Desktop/materiallogindemo-master/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.0/jars/libs/internal_impl-24.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="045be695d968dd707691cc55d23746dbf8cf569a">
+        <dex dex="/Users/Jaecheol/Desktop/materiallogindemo-master/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.0-98387e766d8bfc50c5a0325ffc02a971875676ec.jar" />
+    </item>
+    <item
+        jar="/Users/Jaecheol/Desktop/materiallogindemo-master/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="fcc945a86ebcbf527429acb8216ec7dae2c06417">
+        <dex dex="/Users/Jaecheol/Desktop/materiallogindemo-master/app/build/intermediates/pre-dexed/debug/classes-ee8d39f4b6f369d5227413f7550ee227642cd1bc.jar" />
+    </item>
+    <item
+        jar="/Users/Jaecheol/Desktop/materiallogindemo-master/app/build/intermediates/exploded-aar/com.android.support/design/22.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="fc63b820d54c8a27a3a614bdd93920e0076581c2">
+        <dex dex="/Users/Jaecheol/Desktop/materiallogindemo-master/app/build/intermediates/pre-dexed/debug/classes-0135e703c4a2786ab9a17ac838943f26ed6f36b4.jar" />
     </item>
 
 </items>

@@ -49,8 +49,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Q/H"
-        android:layout_marginStart="50dp"
-        android:layout_alignTop="@+id/item_lrqh"
+        android:layout_marginStart="68dp"
+        android:layout_below="@+id/item_distance"
         android:layout_toEndOf="@+id/item_distance" />
 
     <TextView
@@ -60,5 +60,13 @@
         android:text="L/R/Q/H"
         android:layout_below="@+id/item_calory"
         android:layout_alignEnd="@+id/item_time" />
+
+    <TextView
+        android:id="@+id/item_ma"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ma"
+        android:layout_below="@+id/item_lr"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

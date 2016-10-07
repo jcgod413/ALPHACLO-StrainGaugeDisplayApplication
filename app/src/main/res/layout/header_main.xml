@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:paddingTop="30dp"
+    android:paddingBottom="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView android:textSize="18sp"
+            android:textColor="@color/material_grey_300"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Duration" />
+        <Chronometer
+            android:textSize="34sp"
+            android:textColor="@color/material_grey_100"
+            android:gravity="center"
+            android:id="@+id/chronometer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00" />
+    </LinearLayout>
+
+    <View
+        android:background="@color/material_grey_600"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="5dp" />
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:textSize="18sp"
+            android:textColor="@color/material_grey_300"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Calories" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:textSize="34sp"
+                android:textColor="@color/material_grey_100"
+                android:gravity="center"
+                android:id="@+id/caloryText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0" />
+            <TextView
+                android:textSize="16sp"
+                android:textColor="@color/material_grey_300"
+                android:gravity="center|bottom"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text=" Cal" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:background="@color/material_grey_600"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="5dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:textSize="18sp"
+            android:textColor="@color/material_grey_300"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Distance" />
+        <LinearLayout
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="34sp"
+                android:textColor="@color/material_grey_100"
+                android:gravity="center"
+                android:id="@+id/distanceText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0" />
+            <TextView
+                android:textSize="16sp"
+                android:textColor="@color/material_grey_300"
+                android:gravity="center|bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text=" m" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

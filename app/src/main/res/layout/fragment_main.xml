@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:background="@color/primary"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <include
+        android:id="@+id/mainHeader"
+        layout="@layout/header_main" />
+    <android.support.v4.view.ViewPager
+        android:id="@+id/imageviewPager"
+        android:layout_width="match_parent"
+        android:layout_height="413dp" />
+    <include
+        layout="@layout/footer" />
+
+</LinearLayout>

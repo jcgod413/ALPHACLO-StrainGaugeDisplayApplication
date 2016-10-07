@@ -1,8 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#343943</color>
-    <color name="colorPrimaryDark">#333333</color>
-    <color name="colorAccent">#FF4081</color>
+  <!--<color name="primary">#E43F3F</color>-->
+  <!--<color name="primary_dark">#E12929</color>-->
+  <!--<color name="primary_darker">#CC1D1D</color>-->
+  <color name="primary">#333333</color>
+  <color name="primary_dark">#222222</color>
+  <color name="primary_darker">#111111</color>
+  <color name="accent">#ff3dbddf</color>
+  <color name="accent_2">#ff15fe74</color>
+  <color name="accent_3">#ff006cb8</color>
 
-    <color name="tabsScrollColor">#ffffff</color>
+  <color name="black">#000000</color>
+  <color name="jet">#222222</color>
+  <color name="oil">#333333</color>
+  <color name="monsoon">#777777</color>
+  <color name="jumbo">#888888</color>
+  <color name="aluminum">#999999</color>
+  <color name="base">#AAAAAA</color>
+  <color name="iron">#CCCCCC</color>
+  <color name="white">#FFFFFF</color>
+
+  <color name="material_grey_100">#fff5f5f5</color>
+  <color name="material_grey_300">#ffe0e0e0</color>
+  <color name="material_grey_50">#fffafafa</color>
+  <color name="material_grey_600">#ff757575</color>
+  <color name="material_grey_800">#ff424242</color>
+  <color name="material_grey_850">#ff303030</color>
+  <color name="material_grey_900">#ff212121</color>
 </resources>
